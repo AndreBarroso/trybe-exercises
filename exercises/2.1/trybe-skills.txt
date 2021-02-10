@@ -8,3 +8,5 @@ CSS
 react 
 node.js
 sql
+banco de dados
+python
