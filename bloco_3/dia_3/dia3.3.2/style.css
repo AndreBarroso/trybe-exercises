@@ -1,0 +1,32 @@
+div:hover{
+    border: 1px solid black;
+}
+
+div:nth-of-type(1) {
+    background-color: royalblue;
+  }
+  
+div:nth-of-type(2) {
+    background-color: aqua;
+  }
+
+div:nth-of-type(3) {
+    background-color: yellow;
+    height: 50px;
+  }
+
+  div:nth-of-type(4) {
+    background-color: red;
+  }
+
+  div:nth-of-type(5) {
+    background-color: purple;
+  }
+
+  div:nth-of-type(4) {
+    background-color: red;
+  }
+
+h3:nth-of-type(2n+1){
+    font-style: italic;
+}

@@ -1,0 +1,28 @@
+.super-mario{
+    position:absolute;
+}
+
+.goomba{
+    position:absolute;
+    top: 1255px
+}
+.bowser{
+    position:absolute;
+    top: 2690px;
+    z-index: 1;
+    left: 200px;
+
+}
+
+.balaoFala{
+    position:absolute;
+    top: 2710px;
+    z-index: 2;
+    
+}
+.word{
+    position:relative;
+    top:103px;
+    left: 60px;
+}
+

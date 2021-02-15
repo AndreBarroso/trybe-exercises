@@ -1,0 +1,15 @@
+.center{
+    text-align: center;
+}
+
+.liOrd:hover{
+    background-color: blue;
+} 
+
+.liOrd:active{
+    color: white;
+} 
+
+.liDesord{
+    list-style: none;
+}
