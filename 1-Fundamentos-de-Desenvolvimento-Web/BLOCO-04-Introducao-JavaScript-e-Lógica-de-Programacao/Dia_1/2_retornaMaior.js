@@ -1,7 +1,6 @@
-/*Programa para imprime o maior entre a e b*/
+/*Programa que imprime o maior entre a e b*/
 let a = 10;
 let b = 60;
-let resultado;
 
 if(a>b){
     console.log(a);
@@ -14,4 +13,3 @@ else if(b>a){
 else{
     console.log("Ambos tem o mesmo valor.")
 }
-
