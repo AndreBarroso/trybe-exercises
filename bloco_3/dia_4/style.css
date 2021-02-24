@@ -1,0 +1,17 @@
+header{
+    position:fixed;
+    top:0px;
+}
+
+main{
+    position:absolute;
+    top:250px;
+}
+
+aside{
+    position:absolute;
+    top:800px;
+}
+
+
+
