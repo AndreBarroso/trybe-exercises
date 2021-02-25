@@ -1,3 +1,5 @@
+/* ***Exercícios do Dia *** */
+
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
 
@@ -79,3 +81,5 @@ console.log();
 for(i=0; i<newArray.length; i++ ){
     console.log(newArray[i]/2);
 }
+
+
