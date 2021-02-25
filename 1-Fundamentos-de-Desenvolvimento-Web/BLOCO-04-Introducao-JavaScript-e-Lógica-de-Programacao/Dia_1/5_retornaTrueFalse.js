@@ -1,3 +1,5 @@
+/*Retorna se são ângulos que podem formar um triângulo*/
+
 let a = 90;
 let b = 30;
 let c = 60;

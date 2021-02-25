@@ -1,3 +1,5 @@
+/*Programa que retorna a ação da peça de xadrez*/
+
 let chessPiece = 'bispo';
 
 switch (chessPiece.toLowerCase()) {

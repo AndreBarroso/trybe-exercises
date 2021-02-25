@@ -1,3 +1,5 @@
+/*Retorna o conceito da nota mediante seu valor*/
+
 let nota = 90;
 if (nota>100 || nota < 0)
 {
