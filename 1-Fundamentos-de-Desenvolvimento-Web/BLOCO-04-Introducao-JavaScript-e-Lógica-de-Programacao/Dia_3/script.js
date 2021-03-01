@@ -20,6 +20,8 @@ for(let j=0; j<n; j+=1){
 console.log(); /*Saltar linha*/
 console.log(); /*Saltar linha*/
 
+
+
 /*Exercício 2 */
 for(i=0; i<n; i+=1){
     if(i===0) {
@@ -32,6 +34,8 @@ for(i=0; i<n; i+=1){
     }
 }
 console.log(' ')
+
+
 /*Exercício 3 */
 var k=0;
 var j=0;
@@ -63,6 +67,7 @@ for(k=0; k<n; k+=1){
 }
 console.log(' ');
 
+
 /*Exercício 4 */
 
 let div;
@@ -83,9 +88,6 @@ for(let i=n; i>0; i-=1){
             }
            
         }
-       
-       
-        
         for(let k=1;k<=l;k++){
             if(k===1){
                 centro='*';
