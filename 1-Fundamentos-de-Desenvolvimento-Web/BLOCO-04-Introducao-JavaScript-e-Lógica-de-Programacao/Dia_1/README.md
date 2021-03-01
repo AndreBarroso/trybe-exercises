@@ -1,7 +1,7 @@
 # Agora a prática
-1. Nos exercícios de hoje, você vai fazer quinze pequenos programas. Todos trabalham a lógica condicional ( if/else e switch ), operadores aritméticos ( + , - , * , / , % ) e operadores lógicos ( > , < , && , || ). Para que consiga executar seus códigos recomendamos que utilize a extensão Code Runner , você pode ver mais sobre ela no conteúdo que fizemos sobre o uso do VS Code .
+1. Nos exercícios de hoje, você vai fazer quinze pequenos programas. Todos trabalham a lógica condicional ( **if/else** e **switch** **)**, operadores aritméticos **(** **+** , **-** , **** , **/** , **%** **)** e operadores lógicos **(** **>** , **<** , **&&** , **||** **)**. Para que consiga executar seus códigos recomendamos que utilize a extensão Code Runner , você pode ver mais sobre ela no conteúdo que fizemos sobre o uso do VS Code .
 
-Faça cinco programas, um para cada operação aritmética básica. Seu programa deve ter duas variáveis, a e b , definidas no começo com os valores que serão operados. Faça programas para:
+Faça cinco programas, um para cada operação aritmética básica. Seu programa deve ter duas variáveis, **a** e **b** , definidas no começo com os valores que serão operados. Faça programas para:
 
 * Adição
 
@@ -19,7 +19,7 @@ Faça cinco programas, um para cada operação aritmética básica. Seu programa
 
 4. Faça um programa que, dado um valor definido numa variável, retorne "positive" se esse valor for positivo, "negative" se for negativo e "zero" caso contrário.
 
-5. Faça um programa que defina três variáveis com os valores dos três ângulos internos de um triângulo. Retorne true se os ângulos representarem os ângulos de um triângulo e false , caso contrário. Se algum ângulo for inválido o programa deve retornar uma mensagem de erro.
+5. Faça um programa que defina três variáveis com os valores dos três ângulos internos de um triângulo. Retorne **true** se os ângulos representarem os ângulos de um triângulo e **false** , caso contrário. Se algum ângulo for inválido o programa deve retornar uma mensagem de erro.
 
 * Para os ângulos serem de um triângulo válido, a soma dos três deve ser 180 graus.
 
@@ -33,7 +33,7 @@ Faça cinco programas, um para cada operação aritmética básica. Seu programa
 
 * Se a peça passada for inválida, o programa deve retornar uma mensagem de erro.
 
-Exemplo: bishop -> diagonals
+Exemplo: **bishop** -> **diagonals**
 
 7. Escreva um programa que converte uma nota dada em porcentagem (de 0 a 100) em conceitos de A a F. Siga essas regras:
 
@@ -51,14 +51,14 @@ Exemplo: bishop -> diagonals
 
 * O programa deve retornar uma mensagem de erro e encerrar se a nota passada for menor que 0 ou maior que 100.
 * 
-8. Escreva um programa que defina três números em variáveis no seu começo e retorne true se pelo menos uma das três for par. Caso contrário, ele retorna false .
+8. Escreva um programa que defina três números em variáveis no seu começo e retorne **true** se pelo menos uma das três for par. Caso contrário, ele retorna **false** .
 
-* Bonus: use somente um if .
+* **Bonus**: use somente um **if** .
 
 9*.Escreva um programa que defina três números em variáveis no seu começo e retorne true se pelo menos uma das três for ímpar. Caso contrário, ele 
 retorna false .
 
-* Bonus: use somente um if .
+* Bonus: use somente um **if** .
 
 10. Escreva um programa que se inicie com dois valores em duas variáveis diferentes: o custo de um produto e seu valor de venda. A partir dos valores, calcule quanto de lucro (valor de venda descontado o custo do produto) a empresa terá ao vender mil desses produtos.
 
@@ -76,7 +76,7 @@ retorna false .
 
 * A notação para um salário de R$1500,10, por exemplo, deve ser 1500.10. Para as faixas de impostos, use as seguintes referências:
 
-* INSS
+* **INSS**
 
 * * Salário bruto até R$ 1.556,94: alíquota de 8%
 
@@ -86,7 +86,7 @@ retorna false .
 
 * * Salário bruto acima de R$ 5.189,82: alíquota máxima de R$ 570,88
 
-* IR
+* **IR**
 
 * * Até R$ 1.903,98: isento de imposto de renda
 
@@ -98,7 +98,7 @@ retorna false .
 
 * * Acima de R$ 4.664,68: alíquota de 27,5% e parcela de R$ 869,36 a deduzir do imposto.
 
-Exemplo : Uma pessoa possui o salário bruto de R$ 3.000,00. O cálculo será:
+**Exemplo** : Uma pessoa possui o salário bruto de R$ 3.000,00. O cálculo será:
 
 * O salário bruto está entre R$ 2.594,93 e R$ 5.189,82, então sua alíquota  para INSS é de 11%. O INSS será 11% de R$ 3.000, ou seja, R$ 330,00.
 
@@ -119,4 +119,4 @@ Exemplo : Uma pessoa possui o salário bruto de R$ 3.000,00. O cálculo será:
 
 Resultado: R$ 2.612,55.
 
-Dica: que tal identificar as alíquotas com variáveis de nomes explicativos?
+**Dica:** que tal identificar as alíquotas com variáveis de nomes explicativos?
