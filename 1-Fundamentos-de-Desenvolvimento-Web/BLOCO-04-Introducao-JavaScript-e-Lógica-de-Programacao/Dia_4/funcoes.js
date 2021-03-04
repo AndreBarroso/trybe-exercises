@@ -82,3 +82,33 @@ function maisRepetido(array){
     return resultado;
 }
 console.log(maisRepetido( [2, 1, 1, 1, 8, 2, 3]));
+
+/* Exercicio 6 */
+function sumTot(n) {
+    let cont = 0;
+    for (let i = 1; i <= n; i +=1)
+    {
+        cont += i;
+    }
+
+    return cont;
+}
+console.log(sumTot(5));
+
+/* Exercicio 7 */
+
+function endEqual(palavra, fim) {
+    let tamanho = fim.length;
+    let j = 0;
+
+    for(let i = palavra.length - tamanho  ; i < palavra.length; i += 1 ) {
+        let a = palavra[i];
+        let b = fim[j];
+        if(palavra[i]!==fim[j]){
+            return false;
+        }
+        j +=1;
+    }
+    return true;
+}
+console.log( endEqual('trybe','ibe'));
