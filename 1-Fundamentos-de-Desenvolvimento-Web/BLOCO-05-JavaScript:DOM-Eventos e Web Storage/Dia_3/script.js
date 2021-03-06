@@ -51,5 +51,15 @@ function changeColorHolidaysDays(){
         
 }
 
+function createFriday (dia) {
+    let botFriday = document.createElement ('button');
+    botFriday.innerText = dia;
+    return document.querySelector('.buttons-container').appendChild(botFriday);
+}
+
+
 addBotHoliday('Feriados');
 changeColorHolidaysDays();
+createFriday ('Sexta-Feira');
+
+
