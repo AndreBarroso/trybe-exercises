@@ -8,6 +8,7 @@ const cargo = document.getElementById('cargo');
 const descricaoCargo = document.getElementById('descricaoCargo');
 const dataDeInicio = document.getElementById('dataDeInicio');
 const submit = document.getElementById('submit');
+const limpar = document.getElementById('clear');
 
 const rNome = document.getElementById('rNome');
 const rEmail = document.getElementById('rEmail');
@@ -37,4 +38,21 @@ function submete() {
     submit.addEventListener('click', eventSubmeter)
 }
 
+function limparEvent() {
+    rNome.innerText = '';
+    rEmail.innerText = '';
+    rCpf.innerText = '';
+    rEndereco.innerText = '';
+    rEstado.innerText = '';
+    rResumoProfissional.innerText = '';
+    rCargo.innerText = cargo.value;
+    rDescricaoCargo.innerText = '';
+    rDataDeInicio.innerText = '';
+}
+
+function limpa() {
+    limpar.addEventListener('click', limparEvent);
+}
+
 submete();
+limpa();
