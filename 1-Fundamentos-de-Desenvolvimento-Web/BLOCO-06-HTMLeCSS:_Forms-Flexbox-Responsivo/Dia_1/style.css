@@ -1,0 +1,23 @@
+input, textarea {
+    position: absolute;
+    left: 169px;
+    height: 12px;
+}
+
+select {
+    position: relative;
+    left: 280px;
+    height: 18px;
+    text-align: center;
+    top: -1px;
+}
+
+label {
+    width: 800px;
+    margin-block: 50px;
+}
+
+#resumoProfissional {
+    height: 70px;
+    width: 200px;
+}
