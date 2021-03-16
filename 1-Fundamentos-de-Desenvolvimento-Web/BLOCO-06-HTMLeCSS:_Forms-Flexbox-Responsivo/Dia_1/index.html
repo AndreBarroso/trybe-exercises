@@ -11,13 +11,13 @@
         <fieldset>
             <legend>lala</legend>
             <label > Nome
-                <input type="text" name="nome" maxlength="40" required id="nome">
+                <input type="text" name="nome" maxlength="40" required id="nome" value="jnfj">
             </label> <br>
             <label> email
                 <input type="email" name="email" maxlength="50" required id="email">
             </label> <br>
             <label> CPF
-                <input type="number" name="cpf" maxlength="11" required id="cpf">
+                <input type="text" name="cpf" maxlength="11" required id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}\">
             </label> <br>
             <label> Endereço
                 <input type="text" name="endereco" maxlength="200" required id="endereco">
@@ -72,8 +72,22 @@
                 <input type="date" name="dataDeInicio" required id="dataDeInicio">
             </label> <br>
             <button type="submit" id="submit">Submit</button>
-          
-    </form>
-
+        </fieldset>
+    </form> <br><br>
+    
+    
+    <div id="respostas">
+        <div id="rNome"></div><br>
+        <div id="rEmail"></div>
+        <div id="rCPF"></div>
+        <div id="rEndereco"></div>
+        <div id="rEstado"></div>
+        <div id="rResumoProfissional"></div>
+        <div id="rCargo"></div>
+        <div id="rDescricaoCargo"></div>
+        <div id="rDataDeInicio"></div>
+        <div id="rSubmit"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
