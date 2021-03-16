@@ -1,0 +1,10 @@
+const name = document.getElementById('nome');
+const email = document.getElementById('email');
+const cpf = document.getElementById('cpf');
+const endereco = document.getElementById('endereco');
+const estado = document.getElementById('estado');
+const resumoProfissional = document.getElementById('resumoProfissional');
+const cargo= document.getElementById('cargo');
+const descricaoCargo = document.getElementById('descricaoCargo');
+const dataDeInicio = document.getElementById('dataDeInicio');
+const submit = document.getElementById('submit');
