@@ -1,0 +1,16 @@
+body {
+    padding: 30px;
+}
+
+#conteudo {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-control {
+    width: 70%;
+}
+
+.form-select {
+    width: 20%;
+}
