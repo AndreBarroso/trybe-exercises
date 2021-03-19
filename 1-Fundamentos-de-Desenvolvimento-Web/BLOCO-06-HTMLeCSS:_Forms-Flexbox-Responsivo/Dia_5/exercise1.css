@@ -37,7 +37,7 @@ figure {
   }
 }
 
-@media screen and (min-width: 500px){
+@media screen and (min-width: 500px) and (max-width: 1000px){
   body {
     margin: 25px;
     background-color: blueviolet;
@@ -53,6 +53,34 @@ figure {
 
   figure {
     margin-bottom: 15px;
+  }
+
+
+  #figuras {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 1470px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    margin: 25px;
+    background-color: yellow;
+  }
+  
+  h1 {
+    font-size: 35px;
+  }
+
+  p {
+    font-size: 30px;
+    max-width: 1450px;
+  }
+
+  figure {
+    margin-bottom: 20px;
   }
 
 
