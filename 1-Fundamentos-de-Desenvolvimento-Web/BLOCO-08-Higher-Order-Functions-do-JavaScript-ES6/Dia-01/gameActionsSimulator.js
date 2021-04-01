@@ -29,10 +29,10 @@ const mage = {
   const warriorAtack  = () => {
     const minimun = warrior.strength;
     const maximun = warrior.weaponDmg*warrior.strength;
-    return Math.floor(Math.random()(maximun - minimun) - minimun);
+    return Math.floor(Math.random()*(maximun - minimun) + minimun);
   };
 
-  const mageAttack = (mage) => {
+  const mageAttack = () => {
     const mageMana = mage.mana;
     const minDmg = mage.intelligence;
     const maxDmg = minDmg * 2;
@@ -49,3 +49,39 @@ const mage = {
     }
       return turnStats;
   };
+
+
+const gameActions = {
+  // Crie as HOFs neste objeto.
+  warriorTurn: (warriorATK) => {
+    const currentlyDemangeCaused = warriorATK();
+    dragon.healthPoints -= currentlyDemangeCaused;
+    warrior.damage = currentlyDemangeCaused;
+  },
+  mageTurn: (mageATK) => {
+    const currentlyDemangeCaused = mageATK();
+    dragon.healthPoints -= currentlyDemangeCaused;
+    mage.damage = currentlyDemangeCaused;
+  },
+  dragonTurn: (dragonATK) => {
+    const currentlyDemangeCaused = dragonATK();
+    mage.healthPoints -= currentlyDemangeCaused;
+    warrior.healthPoints -= currentlyDemangeCaused;
+    dragon.damage = currentlyDemangeCaused;
+  },
+  turn: function () {
+    this.warriorTurn(warriorAtack);
+    this.mageTurn(mageAttack);
+    this.dragonTurn(dragonAtack);
+    const battleMembers = {dragon, mage, warrior};
+    return battleMembers;
+  }
+};
+
+
+console.log(gameActions.turn());
+
+
+
+
+
