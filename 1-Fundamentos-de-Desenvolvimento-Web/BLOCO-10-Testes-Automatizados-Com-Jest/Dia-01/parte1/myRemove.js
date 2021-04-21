@@ -1,4 +1,3 @@
-const assert = require('assert');
 
 function myRemove(arr, item) {
   let newArr = [];
