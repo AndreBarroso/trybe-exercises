@@ -21,8 +21,5 @@ describe('Test randonNumber: Exercicio 3', () => {
         expect(randonNumber).toHaveBeenCalledWith(3);
         expect(randonNumber(3)).toBe(6);
         expect(randonNumber).toHaveBeenCalledTimes(2);
-        
-        
-
     });
 });
