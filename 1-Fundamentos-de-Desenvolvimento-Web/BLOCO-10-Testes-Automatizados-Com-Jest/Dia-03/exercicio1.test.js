@@ -1,8 +1,7 @@
-
 const service = require('./service');
 let randonNumber = service.randonNumber;
 
-describe('Test randonNumber', () => {
+describe('Test randonNumber: Exercicio 1', () => {
     it('test', () => {
         randonNumber = jest.fn().mockReturnValue(10);
         randonNumber();
@@ -11,5 +10,4 @@ describe('Test randonNumber', () => {
         expect(randonNumber()).toBe(10);
         expect(randonNumber).toHaveBeenCalledTimes(2);
     });
-   
 });
