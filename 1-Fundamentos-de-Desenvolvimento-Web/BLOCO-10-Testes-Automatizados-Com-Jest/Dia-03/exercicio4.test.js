@@ -8,7 +8,7 @@ let concatString = stringfunctions.concatString;
 
 describe('stringFuncitons: Exercicio 4', () => {
     it('toUpperString', () => {
-        toUpperString.mockImplementation((str) => str.toLowerCase())
+        toUpperString.mockImplementation((str) => str.toLowerCase());
         toUpperString('ANDRE');
         expect(toUpperString).toHaveBeenCalled();
         expect(toUpperString('ANDRE')).toBe('andre');
@@ -28,7 +28,3 @@ describe('stringFuncitons: Exercicio 4', () => {
         expect(concatString).toHaveBeenCalledWith('e', 'f', 'g');
      })
 });
-
-
-
-
