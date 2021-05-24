@@ -1,3 +1,4 @@
+// App.js
 import React from 'react';
 
 class App extends React.Component {
@@ -24,8 +25,8 @@ class App extends React.Component {
           <input
             onChange={(e) => this.handleInput(e)}
             name='nome'
-            data-testid='input-nome'
             value={this.state.nome}
+            data-testid='input-nome'
           />
         </p>
         <p>
@@ -33,8 +34,8 @@ class App extends React.Component {
           <input
             onChange={(e) => this.handleInput(e)}
             name='email'
-            data-testid='input-email'
             value={this.state.email}
+            data-testid='input-email'
           />
         </p>
       </div>
