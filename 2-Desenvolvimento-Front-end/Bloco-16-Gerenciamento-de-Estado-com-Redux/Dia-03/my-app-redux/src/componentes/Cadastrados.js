@@ -4,14 +4,24 @@ import { Link } from 'react-router-dom';
 
 class Cadastrados extends React.Component {
   render() {
-    const {logado} = this.props;
+    const {logado, clientes} = this.props;
 
     const noLogin = (<div>
       <span>Login não efetuado</span>
     </div>);
 
     const cadastrados = (<div>
-      <span>Cadastrados</span>
+      <h1>Cadastrados</h1>
+      {!clientes? <span> Nenhum cliente cadastrado</span>: <ul>
+          {clientes.map((cliente) => {
+            return (
+            <li>
+              {`Nome: ${cliente.nome}
+               idade: ${cliente.idade}
+               email: ${cliente.email}`}
+            </li>)
+          })}
+        </ul>}
       <Link to="/cadastrarCliente">Cadastrar Cliente</Link>
     </div>);
     console.log(logado)
@@ -26,6 +36,7 @@ class Cadastrados extends React.Component {
 
 const mapStateToProps = (state) => ({
   logado: state.loginReducer.login.logado,
+  clientes: state.recordClientReducer,
 })
 
 export default connect(mapStateToProps, null)(Cadastrados);
