@@ -8,6 +8,8 @@ import {
 import './App.css';
 import Home from './componentes/Home';
 import Login from './componentes/Login';
+import Cadastrados from './componentes/Cadastrados';
+import CadastroClientes from './componentes/cadastroClientes';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/cadastrados" component={Cadastrados} />
+          <Route exact path="/cadastrarCliente" component={CadastroClientes} />
         </Switch>
       </Router>
     </div>

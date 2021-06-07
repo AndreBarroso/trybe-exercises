@@ -1,7 +1,7 @@
 import { ENTER_LOGIN } from '../actions/index'
 
 const initialState = {
-  login: {email: '', senha:''},
+  login: {email: '', senha:'', logado: false},
 };
 
 function loginReducer (state=initialState, action) {
@@ -9,7 +9,7 @@ function loginReducer (state=initialState, action) {
     case ENTER_LOGIN:
       return {
         ...state,
-        login: {...state.login, email: action.email, senha: action.senha}
+        login: {...state.login, email: action.email, senha: action.senha, logado: action.logado}
       };
       default: 
         return state;

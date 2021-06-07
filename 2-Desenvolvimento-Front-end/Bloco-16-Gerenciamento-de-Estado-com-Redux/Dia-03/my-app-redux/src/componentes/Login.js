@@ -25,6 +25,8 @@ class Login extends React.Component {
   render() {
     const {getLoginData} = this.props;
     const {email, senha} = this.state;
+    let logado = false;
+    if(email && senha) logado = true;
     return (
       <div>
         Tela login
@@ -45,8 +47,8 @@ class Login extends React.Component {
              id="senha"
              name="senha"
             />
-          <Link to="/"
-           onClick={ ()=> getLoginData(email, senha)}
+          <Link to="/cadastrados"
+           onClick={ ()=> getLoginData(email, senha, logado)}
           >
              login
            </Link>
@@ -57,7 +59,7 @@ class Login extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  getLoginData: (email, senha) => dispatch(dataLogin(email,senha))
+  getLoginData: (email, senha, logado) => dispatch(dataLogin(email,senha, logado))
 })
 
 export default connect(null, mapDispatchToProps)(Login);
