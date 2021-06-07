@@ -1,6 +1,7 @@
-import rootReducer from '../reducers/index';
-import { creatStore} from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+export const ENTER_LOGIN = 'ENTER_LOGIN';
 
-const store = creatStore(rootReducer, composeWithDevTools());
-export default store;
+export const dataLogin = (email, senha) => ({
+  type: ENTER_LOGIN,
+  email,
+  senha,
+});
