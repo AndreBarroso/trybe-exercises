@@ -6,3 +6,6 @@ FROM
 WHERE
     A.rental_duration = B.rental_duration
 HAVING A.rental_duration BETWEEN 2 AND 4;
+
+
+
