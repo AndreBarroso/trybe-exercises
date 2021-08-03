@@ -1,0 +1,1 @@
+ALTER TABLE locations CHANGE COLUMN region_name region VARCHAR(25);
