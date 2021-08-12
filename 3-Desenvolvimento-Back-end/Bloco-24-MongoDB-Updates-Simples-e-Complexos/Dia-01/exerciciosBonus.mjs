@@ -358,6 +358,13 @@ min: { power: 300 },
 
 /* Exercício 18 : Decremente em 100 o poder dos mutantes que não
 possuem a propriedade class . */
+db.xmen.updateMany(
+  { class: { $exists: false } },
+  {
+currentDate: { lastUpdate: { $type: "timestamp" } },
+inc: { power: -100 },
+  },
+);
 
 /* Exercício 19 : Em apenas uma query adicione o campo areas
 com o seguinte array como valor: ["Students Room"] a todos os
