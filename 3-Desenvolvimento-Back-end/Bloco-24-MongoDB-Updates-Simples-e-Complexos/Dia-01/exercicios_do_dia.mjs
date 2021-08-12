@@ -19,3 +19,38 @@ db.movies.updateOne(
   {$inc: {imdbRating: 2}}
 );
 
+/* Exercício 5 : Aumente em 5 o budget do filme Home Alone . */
+db.movies.updateOne(
+  {title: "Home Alone"},
+  {$inc: {budget: 5}}
+);
+
+/* Exercício 6 : Multiplique por 4 o imdbRating do filme Batman . */
+db.movies.updateOne(
+  {title: "Batman"},
+  {$mul: {imdbRating: 4}}
+);
+
+/* Exercício 7 : Renomeie o campo budget para estimatedBudget do filme Batman . */
+db.movies.updateOne(
+  {title: "Batman"},
+  {$rename: {budget: "estimatedBudget"}}
+);
+
+/* Exercício 8 : Utilize o operador $min para alterar o budget para 5
+do filme Home Alone . */
+db.movies.updateOne(
+  {title: "Home Alone"},
+  {$min: {budget: "5"}}
+);
+
+/* Exercício 9 : Utilize o operador $max para alterar o imdbRating
+para 8.6 do filme Godzilla . Além disso, altere a categoria
+"adventure" para "thriller" do filme Godzilla . */
+db.movies.updateOne(
+  {title: "Godzilla"},
+    {
+     $max: {imdbRating: "5"},
+     $set: {adventure: "thriller"}
+    }
+);
