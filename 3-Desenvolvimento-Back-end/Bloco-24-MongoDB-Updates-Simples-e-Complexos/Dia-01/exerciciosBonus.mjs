@@ -342,12 +342,19 @@ db.xmen.updateMany(
   { class: { $in: ["omega", "gama"] } },
   {
 currentDate: { lastUpdate: { $type: "timestamp" } },
-max: { power: 500 },
+$max: { power: 500 },
   },
 );
 
 /* Exercício 17 : Produza uma query onde os mutantes class gama
 passam a ter seu poder de 300 somente se seu poder for maior que 300 . */
+db.xmen.updateMany(
+  { class: "gama" },
+  {
+currentDate: { lastUpdate: { $type: "timestamp" } },
+min: { power: 300 },
+  },
+);
 
 /* Exercício 18 : Decremente em 100 o poder dos mutantes que não
 possuem a propriedade class . */
