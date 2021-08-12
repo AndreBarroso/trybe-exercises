@@ -327,10 +327,24 @@ db.xmen.updateMany(
 /* Exercício 15 : Produza uma query que renomeie os campos
 de name para hero_name , e de true_name para full_name ;
 adicione o campo power com valor 100, em todos os documentos. */
+db.xmen.updateMany(
+  {},
+  {
+    $rename: { lastUpdate: "hero_name"},
+    $rename: { true_name: "full_name"},
+  },
+);
 
 /* Exercício 16 : Produza uma query onde os mutantes class omega
 ou gama passam a ter seu poder de 500 somente se seu poder for
 menor que 500 . */
+db.xmen.updateMany(
+  { class: { $in: ["omega", "gama"] } },
+  {
+currentDate: { lastUpdate: { $type: "timestamp" } },
+max: { power: 500 },
+  },
+);
 
 /* Exercício 17 : Produza uma query onde os mutantes class gama
 passam a ter seu poder de 300 somente se seu poder for maior que 300 . */
