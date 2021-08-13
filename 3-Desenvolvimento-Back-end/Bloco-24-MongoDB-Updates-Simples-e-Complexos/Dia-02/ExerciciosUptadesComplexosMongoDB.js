@@ -71,6 +71,28 @@ Home Alone com os seguintes dados:
                     }
 
 */
+db.movies.updateOne(
+  { title: "Home Alone" },
+  {
+push: {
+      cast: {
+each: [
+          {
+            "actor": "Macaulay Culkin",
+            "character": "Kevin",
+          },
+          {
+            "actor": "Joe Pesci",
+            "character": "Harry",
+          },
+          {
+            "actor": "Daniel Stern",
+          },
+        ],
+      },
+    },
+  },
+);
 
 
 /* Exercício 9: Adicione o campo character com o valor Marv ao array
