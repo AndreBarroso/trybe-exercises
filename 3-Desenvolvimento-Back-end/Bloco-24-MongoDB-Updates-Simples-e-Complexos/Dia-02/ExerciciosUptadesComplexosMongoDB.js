@@ -74,9 +74,9 @@ Home Alone com os seguintes dados:
 db.movies.updateOne(
   { title: "Home Alone" },
   {
-push: {
+$push: {
       cast: {
-each: [
+$each: [
           {
             "actor": "Macaulay Culkin",
             "character": "Kevin",
@@ -97,9 +97,38 @@ each: [
 
 /* Exercício 9: Adicione o campo character com o valor Marv ao array
 de cast em que o campo actor seja igual a Daniel Stern no filme Home Alone .*/
+db.movies.updateOne(
+  {
+    title: "Home Alone",
+    "cast.actor": "Daniel Stern",
+  },
+  {
+    $set: { "cast.$.character": "Marv" },
+  },
+);
 
 /* Exercício 10: Crie um array de documentos chamado cast para
 o filme Batman com os seguintes dados: */
+db.movies.updateOne(
+  { title: "Batman" },
+  {
+push: {
+      cast: {
+each: [
+          {
+            "character": "Batman",
+          },
+          {
+            "character": "Alfred",
+          },
+          {
+            "character": "Coringa",
+          },
+        ],
+      },
+    },
+  },
+);
 
 /* Exercício 11: Produza três querys para o filme Batman : 
   *Adicione o campo actor , que deve ser um array com o valor Christian Bale ,
@@ -115,3 +144,13 @@ o filme Batman com os seguintes dados: */
 os valores "Michael Keaton" , "Val Kilmer" e "George Clooney" , e deixe o array
 em ordem alfabética. */
 
+
+db.movies.findOne(
+  {
+    title: "Home Alone",
+    "cast.actor": "Daniel Stern",
+  },
+  {
+$set: { "cast.$.character": "Marv" },
+  },
+);
