@@ -1,5 +1,0 @@
-use ('masterchef');
-
-
-
-db.inventory.find({ qty: { $mod: [4, 1] } });
