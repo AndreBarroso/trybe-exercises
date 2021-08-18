@@ -1,0 +1,11 @@
+use ('erp');
+db.vendas.find();
+
+// db.produtos.find();
+
+// db.clientes.find();
+
+
+
+
+
