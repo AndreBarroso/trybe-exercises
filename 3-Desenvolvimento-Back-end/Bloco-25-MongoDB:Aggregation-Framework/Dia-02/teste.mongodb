@@ -1,0 +1,27 @@
+use ('erp');
+
+db.clientes.aggregate([
+  {
+    $addFields: {
+      idade: {
+        $floor: {
+          $divide: [
+            {$subtract: ["$$NOW", "$dataNascimento"]},
+            {$multiply: [365, 86400000 ]}
+          ] 
+        }
+      }
+    }
+  },
+  {
+    $lookup: {
+      from: 'vendas',
+      localField: 'clienteId',
+      foreignField: 'clienteId',
+      as: 'compras'
+    }
+  }
+]);
+
+
+
