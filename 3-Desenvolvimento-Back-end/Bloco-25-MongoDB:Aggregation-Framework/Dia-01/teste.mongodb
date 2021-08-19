@@ -1,5 +1,5 @@
 use ('erp');
-db.vendas.find();
+ db.vendas.find();
 
 // db.produtos.find();
 
@@ -7,5 +7,26 @@ db.vendas.find();
 
 
 
-
+db.vendas.aggregate([
+  {
+    $match: {
+      dataVenda: {
+      $gte: ISODate('2020-01-01'),
+      $lte: ISODate('2020-03-01'),
+    }
+    }
+  },
+  {
+    $group: {
+      _id: "$clienteId",
+      totalCompras: {$sum: 1}
+    }
+  }, 
+  {
+     $group: {
+      _id: null,
+      totalCompras: {$sum: 1}
+    }
+  },
+]);
 

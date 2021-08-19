@@ -94,16 +94,112 @@ com o documento a seguir (não se importe com a ordem dos campos):
 */
 
 /* Exercício 8 : Descubra quais são os 5 clientes que gastaram o maior valor. */
+db.vendas.aggregate([
+  {
+    $match: {
+      status: { $in: ["ENTREGUE", "EM SEPARACAO"] }
+    }
+  },
+  {
+    $group: {
+      _id: "$clienteId",
+      valorTotal: {$sum: "$valorTotal"}
+    }
+  },
+  {
+    $sort: {"valorTotal": -1}
+  },
+  {
+    $limit: 5
+  }
+]);
+
+
+
 
 /* Exercício 9 : Descubra quais são os 10 clientes que gastaram
 o maior valor no ano de 2019 . */
+db.vendas.aggregate([
+  {
+    $match: {
+      dataVenda: {
+        $gte: ISODate('2019-01-01'),
+        $lte: ISODate('2019-12-31')
+      }
+    }
+  },
+  {
+      group: {
+       _id: "$clienteId",
+       valorTotal: {
+          $sum: "$valorTotal"
+      }
+    }
+  },
+  {
+    $sort: {
+      valotTotal: -1
+    }
+  },
+  {
+    $limit: 10
+  }
+]);
+
 
 /* Exercício 10 : Descubra quantos clientes compraram mais de 5 vezes.
 Retorne um documento que contenha somente o campo clientes com o total de clientes.
 Dica: O operador $count pode simplificar sua query . */
+db.vendas.aggregate([
+  {
+    $group: {
+      _id: "$clienteId",
+      totalCompras: {$sum: 1}
+    }
+  },
+  {
+    $match: {
+      totalCompras: { $gt: 5 }
+    }
+  },
+  {
+    $group: {
+      _id: null,
+      clientes: {$sum: 1}
+    }
+  },
+  {
+      $project: {
+      _id: 0
+    }
+  }
+  
+]);
 
 /* Exercício 11 : Descubra quantos clientes compraram menos de três vezes entre
 os meses de Janeiro de 2020 e Março de 2020 . */
+db.vendas.aggregate([
+  {
+    $match: {
+      dataVenda: {
+      $gte: ISODate('2020-01-01'),
+      $lte: ISODate('2020-03-01'),
+    }
+    }
+  },
+  {
+    $group: {
+      _id: "$clienteId",
+      totalCompras: {$sum: 1}
+    }
+  }, 
+  {
+     $group: {
+      _id: null,
+      totalCompras: {$sum: 1}
+    }
+  },
+]);
 
 /* Exercício 12 : Descubra quais as três uf s que mais compraram no ano de 2020 .
 Retorne os documentos no seguinte formato:
