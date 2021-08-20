@@ -72,7 +72,7 @@ db.clientes.aggregate([
 de cada sexo no campo total . */
 db.clientes.aggregate([
   {
-group: {
+    $group: {
       _id: {
         sexo: "$sexo",
         uf: "$endereco.uf"
@@ -92,6 +92,26 @@ com o documento a seguir (não se importe com a ordem dos campos):
       "total": 100
     }
 */
+db.clientes.aggregate([
+  {
+    $group: {
+      _id: {
+        sexo: "$sexo",
+        uf: "$endereco.uf"
+      },
+      total: { $sum: 1 }
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      "estado": "$_id.uf",
+      "sexo": "$_id.sexo",
+      total: 1
+    }
+  }
+]);
+
 
 /* Exercício 8 : Descubra quais são os 5 clientes que gastaram o maior valor. */
 db.vendas.aggregate([
