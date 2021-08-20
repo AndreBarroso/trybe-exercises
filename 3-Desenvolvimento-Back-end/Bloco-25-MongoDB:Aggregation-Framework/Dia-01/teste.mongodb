@@ -3,20 +3,21 @@ use ('erp');
 
 db.clientes.aggregate([
   {
-    $group: {
-      _id: {
-        sexo: "$sexo",
-        uf: "$endereco.uf"
-      },
-      total: { $sum: 1 }
+    $lookup: {
+      from: 'vendas',
+      localField: 'clienteId',
+      foreignField: 'clienteId',
+      as: 'compra'
     }
   },
   {
     $project: {
       _id: 0,
-      "estado": "$_id.uf",
-      "sexo": "$_id.sexo",
-      total: 1
+      "uf": "$endereco.uf",
+      "totalVendas": {$size: "$compra.itens"}
     }
+  },
+  {
+    $sort: {totalVendas: -1}
   }
 ]);
