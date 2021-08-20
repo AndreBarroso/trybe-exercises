@@ -1,23 +1,34 @@
 use ('erp');
 
 
-db.clientes.aggregate([
+db.vendas.aggregate([
+  {
+    $match: {
+      dataVenda: {
+        $gte: ISODate('2019-01-01'),
+        $lte: ISODate('2019-12-31')
+      }
+    }
+  },
   {
     $lookup: {
-      from: 'vendas',
+      from: 'clientes',
       localField: 'clienteId',
       foreignField: 'clienteId',
-      as: 'compra'
+      as: 'cliente'
     }
   },
   {
-    $project: {
-      _id: 0,
-      "uf": "$endereco.uf",
-      "totalVendas": {$size: "$compra.itens"}
+    $unwind: "$cliente"
+  },
+  {
+    $group: {
+      _id: "$cliente.endereco.uf",
+      totalVendas: {  $sum: 1 },
+      mediaVendas: { $avg: "$valorTotal" },
     }
   },
   {
-    $sort: {totalVendas: -1}
-  }
+    $sort: { _id: 1 }
+  },
 ]);
