@@ -1,4 +1,0 @@
-use ('erp');
-
-
-db.clientes.find();
