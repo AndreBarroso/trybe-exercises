@@ -1,3 +1,3 @@
-use ('erp');
+use ('class');
 
-db.vendas.find();
+db.movies.find()

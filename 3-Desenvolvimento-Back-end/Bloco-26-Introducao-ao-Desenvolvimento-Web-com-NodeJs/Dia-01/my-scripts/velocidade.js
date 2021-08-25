@@ -8,3 +8,5 @@ function calculaVelocidade( distancia, tempo) {
 }
 
 console.log(calculaVelocidade(d, t))
+
+module.exports = calculaVelocidade

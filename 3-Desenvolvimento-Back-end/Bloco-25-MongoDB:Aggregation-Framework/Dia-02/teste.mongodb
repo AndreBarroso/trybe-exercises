@@ -29,7 +29,32 @@ db.clientes.aggregate([
       }
     }
   },
-]);
-
-
-
+  {
+    $project: {
+      _id: 0,
+      endereco: 1,
+      qtdCompras: {$size: "$compras.itens"}
+    }
+  },
+  {
+    $group: {
+      _id: "$endereco.uf",
+      comprasTot: {
+        $sum: "$qtdCompras"
+      }
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      "uf": "$_id",
+      "comprasTotais": "$comprasTot"
+    }
+  },
+  {
+    $sort: {comprasTotais: -1}
+  },
+  {
+    $limit: 5
+  }
+])

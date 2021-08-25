@@ -1,6 +1,7 @@
 const readline = require('readline-sync');
 
 
+
 function seqFibonacci() {
   const n = readline.questionInt('Digite quantos números da sequência deseja ver: ');
   let n1 = 0;
