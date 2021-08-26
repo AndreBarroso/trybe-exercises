@@ -31,4 +31,13 @@ describe('Retornar sinal do número', ()=> {
       expect(sinal).to.be.equal('neutro');
     });
   });
+  describe('Verifica se o valor inserido é número', () => {
+    const sinal = signalNumber('a');
+    it('Verifica se o retorno é uma string',()=> {
+      expect(sinal).to.be.a('string');
+    });
+    it('Retorno: "o valor deve ser um número"',()=> {
+      expect(sinal).to.be.equal('o valor deve ser um número');
+    });
+  });
 });
