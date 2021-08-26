@@ -14,6 +14,7 @@ describe('Retornar sinal do número', ()=> {
     });
   });
   describe('Retorna "negativo" se o número for menor que zero', () => {
+    const sinal = signalNumber(-1);
     it('Verifica se o retorno é uma string',()=> {
       expect(sinal).to.be.a('string');
     });
@@ -22,6 +23,7 @@ describe('Retornar sinal do número', ()=> {
     });
   });
   describe('Retorna "neutro" se o número for zero', () => {
+    const sinal = signalNumber(0);
     it('Verifica se o retorno é uma string',()=> {
       expect(sinal).to.be.a('string');
     });
