@@ -48,6 +48,14 @@ app.get('/simpsons', async (req, res) => {
   res.status(200).json(read);
 })
 
+app.get('/simpsons/:id', async (req, res) => {
+  const { id } = req.params;
+  const ArrayRead = await readFile('simpsons.json')
+    .catch(()=> res.status(500).send('Internal Server Error'));
+  element = ArrayRead.find((e)=> parseInt(e.id)===parseInt(id));
+  return res.status(200).send(element);
+})
+
 
 
 app.listen(3001, () => {
