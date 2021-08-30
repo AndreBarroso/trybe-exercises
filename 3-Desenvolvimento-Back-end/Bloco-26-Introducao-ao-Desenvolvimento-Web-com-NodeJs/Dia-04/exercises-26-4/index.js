@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const readFile = require('./readAndWriteFunctions')
+const readFile = require('./readFunction.js')
+const writeFile = require('./writeFunction.js')
 
 const app = express();
 app.use(bodyParser.json());
@@ -54,6 +55,24 @@ app.get('/simpsons/:id', async (req, res) => {
     .catch(()=> res.status(500).send('Internal Server Error'));
   element = ArrayRead.find((e)=> parseInt(e.id)===parseInt(id));
   return res.status(200).send(element);
+})
+
+app.post('/simpsons/:id', async (req, res) => {
+  const { id, name } = req.body;
+  const ArrayRead = await readFile('simpsons.json')
+    .catch(()=> res.status(500).send('Internal Server Error'));
+
+  if (ArrayRead.map(({ id }) => id).includes(id)) {
+   return res.status(409).json({ message: 'id already exists' });
+  }
+  
+  
+  ArrayRead.push({ id, name });
+
+  await simpsonsUtils.setSimpsons(ArrayRead);
+
+  res.status(204).end();
+
 })
 
 
