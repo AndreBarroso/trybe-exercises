@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const readFile = require('./readAndWriteFunctions')
 
 const app = express();
 app.use(bodyParser.json());
@@ -35,12 +36,19 @@ app.get('/greeting', (req, res) => {
   res.status(200).json(greet);
 });
 
-
 app.put('/users/:name/:age', (req, res) => {
   const { name, age } = req.body;
 
   res.status(200).json({ "message": `Seu nome é ${name} e você tem ${age} anos de idade` })
 })
+
+app.get('/simpsons', async (req, res) => {
+  const read = await readFile('simpsons.json')
+    .catch(()=> res.status(500).send('Internal Server Error'));
+  res.status(200).json(read);
+})
+
+
 
 app.listen(3001, () => {
   console.log('Aplicação ouvindo a porta 3001');
