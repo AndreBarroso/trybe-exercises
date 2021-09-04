@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 
 const Author = require('./models/Author');
 
+const User = require('./models/user');
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -34,6 +36,9 @@ app.post('/authors', async (req, res) => {
 
     res.status(201).json({ message: 'Autor criado com sucesso! '});
 });
+
+
+app.post('/user', User.isUserValid, User.insertUser );
 
 const PORT = process.env.PORT || 3000;
 
