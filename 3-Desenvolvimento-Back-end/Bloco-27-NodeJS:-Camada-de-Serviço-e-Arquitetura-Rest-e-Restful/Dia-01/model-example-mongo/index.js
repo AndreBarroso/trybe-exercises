@@ -40,6 +40,8 @@ app.post('/authors', async (req, res) => {
 
 app.post('/user', User.isUserValid, User.insertUser );
 
+app.get('/user', User.getUsers );
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {

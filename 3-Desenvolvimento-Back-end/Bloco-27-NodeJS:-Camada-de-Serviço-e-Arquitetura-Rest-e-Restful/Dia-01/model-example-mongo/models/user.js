@@ -23,4 +23,15 @@ async function insertUser(req, res ) {
   res.status(201).json(newUser)
 }
 
-module.exports = {isUserValid, insertUser};
+
+
+async function getUsers(_req, res ) {
+  connection().then((db) => db.collection('user').find().toArray())
+    .then((r) => {
+      if(r.length === 0) return res.status(200).json([]);
+      return res.status(200).json(r);
+    });
+  
+}
+
+module.exports = {isUserValid, insertUser, getUsers};
