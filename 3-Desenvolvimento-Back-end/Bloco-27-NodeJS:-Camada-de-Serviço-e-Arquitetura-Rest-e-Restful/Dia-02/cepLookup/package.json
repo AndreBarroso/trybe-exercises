@@ -1,0 +1,25 @@
+{
+  "name": "ceplookup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "2": "^3.0.0",
+    "body-parse": "^0.1.0",
+    "express": "^4.17.1",
+    "express-rescue": "^1.1.31",
+    "joi": "^17.4.2",
+    "mongodb": "^4.1.1",
+    "mysql": "^2.18.1",
+    "text-encoding": "^0.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
