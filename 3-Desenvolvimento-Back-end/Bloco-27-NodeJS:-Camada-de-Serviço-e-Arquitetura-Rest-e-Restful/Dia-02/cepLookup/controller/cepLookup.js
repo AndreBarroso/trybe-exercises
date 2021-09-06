@@ -19,6 +19,8 @@ async function postCep(req, res, next) {
   const { cep, logradouro, bairro, localidade, uf} = req.body;
   const error = servicesValidations.bodyValidations({cep, logradouro, bairro, localidade, uf});
   if(error) return next(error); 
+  const request = services.postCep({ cep, logradouro, bairro, localidade, uf});
+  res.status(200).json(request);
 }
 
 module.exports = {

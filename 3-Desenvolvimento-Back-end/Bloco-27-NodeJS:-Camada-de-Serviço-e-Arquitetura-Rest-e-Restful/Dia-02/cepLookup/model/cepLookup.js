@@ -8,6 +8,18 @@ async function getCep(cep) {
   return ceps;
 }
 
+async function postCep({cepFormat, logradouro, bairro, localidade, uf}) {
+  try{
+    return connection.execute(
+      'INSERT INTO cep_lookup.ceps(cep, logradouro, bairro, localidade, uf) VALUES (?,?,?,?,?)',
+      [cepFormat, logradouro, bairro, localidade, uf]
+    );
+  }catch(e) {
+    return(e);
+  }
+}
+
 module.exports = {
   getCep,
+  postCep,
 }

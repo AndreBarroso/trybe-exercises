@@ -15,9 +15,13 @@ async function getCep(cep) {
 }
 
 
-function postCep(body) {
+async function postCep(body) {
   const error = bodyValidations(body);
   if(error) return (error);
+  const {cep, logradouro, bairro, localidade, uf} = body;
+  const cepFormat = cep.replace(/[^0-9]/g, '')
+  const request = await model.postCep({cepFormat, logradouro, bairro, localidade, uf});
+  return request;
 }
 
 module.exports = {
