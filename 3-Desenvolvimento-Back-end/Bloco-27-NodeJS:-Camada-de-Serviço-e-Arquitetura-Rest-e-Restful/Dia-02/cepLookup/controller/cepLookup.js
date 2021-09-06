@@ -4,14 +4,13 @@ function getPing (_req, res) {
   res.status(201).json({ message: "pong!" });
 }
 
-function getCep(req, res) {
-  console.log('entrou')
- 
+async function getCep(req, res) {
   const { cep } = req.params;
-  console.log(cep)
-  if(!services.getCep(cep)) {
-    return res.status(400).json( { "error": { "code": "invalidData", "message": "CEP inválido" } })
+  const {status, error} = await services.getCep(cep);
+  if(error) {
+    return res.status(status).json(error); 
   }
+  return res.status(200).json(services.getCep(cep));
 }
 
 module.exports = {
