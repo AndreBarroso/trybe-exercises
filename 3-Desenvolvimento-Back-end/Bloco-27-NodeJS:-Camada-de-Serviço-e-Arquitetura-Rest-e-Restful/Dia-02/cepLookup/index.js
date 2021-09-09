@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 app.get('/ping', controller.getPing);
 
-// app.get('/cep', controller.getPing);
+app.get('/cep', controller.getPing);
 
 app.get('/cep/:cep', controller.getCep);
 
