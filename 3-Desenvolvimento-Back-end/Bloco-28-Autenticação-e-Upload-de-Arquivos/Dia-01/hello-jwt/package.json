@@ -1,7 +1,7 @@
 {
-  "name": "hello-jwt",
+  "name": "helly-jwt",
   "version": "0.0.1",
-  "description": "Autenticacao jwt",
+  "description": "exercicios fixacao",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -23,6 +23,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "joi": "^17.4.0",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.5"
   }
 }
