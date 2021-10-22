@@ -7,9 +7,11 @@ module.exports = (io) => io.on('connection', (socket) => {
   });
   socket.on('disconnect', () => {
     socket.broadcast.emit('serverMessage', `Xiii! ${socket.id} acabou de se desconectar! :(`);
+
+    window.onbeforeunload = function(event) {
+      socket.disconnect();
+    };
   });
 
-  window.onbeforeunload = function(event) {
-    socket.disconnect();
-  };
+  
 });
