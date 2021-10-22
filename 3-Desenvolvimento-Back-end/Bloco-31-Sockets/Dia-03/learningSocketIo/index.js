@@ -8,9 +8,12 @@ const io = require('socket.io')(http, {
     methods: ['GET', 'POST'], // Métodos aceitos pela url
   }});
 
+
 app.use(express.static(__dirname + '/public'));
 
-  require('./sockets/ping')(io);
+require('./sockets/ping')(io);
+require('./sockets/chat')(io);
+
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
