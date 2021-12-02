@@ -12,18 +12,25 @@
 #         soma = soma + n
 #     return soma/len(lista)
 
-def asteriscos(n):
-    i = 0
-    var_asteriscos = ''
-    while i < n:
-        var_asteriscos = var_asteriscos+'*'
-        i += 1
+# def asteriscos(n):
+#     i = 0
+#     var_asteriscos = ''
+#     while i < n:
+#         var_asteriscos = var_asteriscos+'*'
+#         i += 1
 
-    while i < n:
-        var_asteriscos = var_asteriscos+'*'
-        i += 1
+#     while i < n:
+#         var_asteriscos = var_asteriscos+'*'
+#         i += 1
         
-    for ast in var_asteriscos:
-        print(var_asteriscos)
+#     for ast in var_asteriscos:
+#         print(var_asteriscos)
     
-asteriscos(5)
+def maiorNome(lista): 
+    maior = lista[0]
+    for nome in lista:
+        if len(nome) > len(maior):
+            maior = nome
+    return maior
+
+print(maiorNome(["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"]))
