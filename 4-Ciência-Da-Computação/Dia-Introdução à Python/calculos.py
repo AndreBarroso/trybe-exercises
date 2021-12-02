@@ -26,11 +26,19 @@
 #     for ast in var_asteriscos:
 #         print(var_asteriscos)
     
-def maiorNome(lista): 
-    maior = lista[0]
-    for nome in lista:
-        if len(nome) > len(maior):
-            maior = nome
-    return maior
+# def maiorNome(lista): 
+#     maior = lista[0]
+#     for nome in lista:
+#         if len(nome) > len(maior):
+#             maior = nome
+#     return maior
 
-print(maiorNome(["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"]))
+# print(maiorNome(["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"]))
+
+def compra(area): 
+    qtd_litros = (1/3) * area
+    qtd_latas = qtd_litros / 18
+    qtd_a_pagar = qtd_latas * 80
+    return (qtd_latas,  qtd_a_pagar)
+
+print(compra(54))

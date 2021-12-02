@@ -1,3 +1,1 @@
-
-    # for ast in var_asteriscos:
-    #     print(ast)
+print(compra(3))
