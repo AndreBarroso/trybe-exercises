@@ -12,6 +12,4 @@ module.exports = (io) => io.on('connection', (socket) => {
       socket.disconnect();
     };
   });
-
-  
 });
