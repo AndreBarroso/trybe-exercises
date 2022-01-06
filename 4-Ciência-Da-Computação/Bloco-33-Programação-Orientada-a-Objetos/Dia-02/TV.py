@@ -24,20 +24,3 @@ class TV:
 
     def mostrar_dados(self):
         return f" volume: {self.volume}, canal: {self.canal}, tamanho: {self.tamanho}, ligada: {self.ligada}"
-
-
-minhaTV = TV(39)
-
-print(minhaTV.mostrar_dados())
-
-minhaTV.aumentar_volume()
-
-print(minhaTV.mostrar_dados())
-
-minhaTV.diminuir_volume()
-
-print(minhaTV.mostrar_dados())
-
-
-
-
